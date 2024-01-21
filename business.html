@@ -68,11 +68,11 @@
       <img src="./img/pro03.png" style="width:250px">
       <div>
         <h4>prod 03</h4>
-        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut minima deserunt eaque. Odit similique magnam perferendis nobis cupiditate,
-          <div class="collapse" id="prod03">
-            qui laudantium, voluptate et libero voluptatum saepe accusantium culpa voluptates nemo. Nemo?
+          <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut minima deserunt eaque. Odit similique magnam perferendis nobis cupiditate,
+            <div class="collapse" id="prod03">
+              qui laudantium, voluptate et libero voluptatum saepe accusantium culpa voluptates nemo. Nemo?
 
-          </div>
+            </div>
           </article>
           <button class="btn btn-primary" data-toggle="collapse" data-target="#prod03" aria-expanded="false" aria-controls="prod03">read more</button>
       </div>
@@ -94,3 +94,11 @@
 <script src="bootstrap.js"></script>
 </body>
 </html>
+<script>
+$(".collapse").on("show.bs.collapse",function(){
+  $(this).parent().next().text('read less')
+})
+$(".collapse").on("hide.bs.collapse",function(){
+  $(this).parent().next().text('read more')
+})
+</script>
