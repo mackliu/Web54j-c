@@ -36,53 +36,55 @@
 <main class="p-5 d-flex justify-content-center align-items-center">
 <div class="position-relative m-2" style="width: 500px;height:500px;">
   <img src="./img/world-map.png" style="width:100%;height:100%;">
-  <div class="btn btn-light position-absolute" style="top:160px;right:15px;">
+  <div class="local btn btn-light position-absolute" style="top:160px;right:15px;">
     <img src="./img/star.png" alt="">Janpan
   </div>
-  <div class="btn btn-light position-absolute" style="width:110px;top:260px;left:25px;">
+  <div class="local btn btn-light position-absolute" style="width:110px;top:260px;left:25px;">
     <img src="./img/star.png" alt="">American
   </div>
-  <div class="btn btn-light position-absolute" style="top:360px;right:315px;">
+  <div class="local btn btn-light position-absolute" style="top:360px;right:315px;">
     <img src="./img/star.png" alt="">UK
   </div>
-  <div class="btn btn-light position-absolute" style="top:460px;right:215px;">
+  <div class="local btn btn-light position-absolute" style="top:460px;right:215px;">
     <img src="./img/star.png" alt="">Africa
   </div>
-  <div class="btn btn-light position-absolute" style="top:360px;right:115px;">
+  <div class="local btn btn-light position-absolute" style="top:360px;right:115px;">
     <img src="./img/star.png" alt="">Taiwan
   </div>
   
 </div>
 <div class="m-2" style="width: 500px;height:500px;">
-  <div class="position-relative">
+  <!--新聞區塊含文字-->
+  <div class="news position-relative">
     <img src="./img/news-01.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
       <h4>Janpan</h4>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
     </div>
   </div>
-  <div class="position-relative d-none">
+
+  <div class="news position-relative d-none">
     <img src="./img/news-02.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
       <h4>American</h4>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
     </div>
   </div>
-  <div class="position-relative d-none">
+  <div class="news position-relative d-none">
     <img src="./img/news-03.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
       <h4>UK</h4>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
     </div>
   </div>
-  <div class="position-relative d-none">
+  <div class="news position-relative d-none">
     <img src="./img/news-04.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
       <h4>Africa</h4>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
     </div>
   </div>
-  <div class="position-relative d-none">
+  <div class="news position-relative d-none">
     <img src="./img/news-05.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
       <h4>Taiwan</h4>
@@ -105,3 +107,12 @@
 <script src="bootstrap.js"></script>
 </body>
 </html>
+<script>
+$(".local").on('click',function(){
+  let idx=$(this).index(".local")
+  console.log(idx)
+  $(".news").removeClass("d-none")
+  $(".news").addClass("d-none")
+  $(".news").eq(idx).removeClass("d-none");
+})
+</script>
