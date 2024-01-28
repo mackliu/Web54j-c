@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Business</title>
+  <!--在header區引入bootstrap.css-->  
   <link rel="stylesheet" href="bootstrap.css">
   <style>
+    /*設定頁面整體大小為1920x1080*/    
     body{
       width:1920px;
       height:1080px;
     }
+    /*設定header、main、footer的高度*/    
     header{
       height:100px;
     }
@@ -22,10 +25,16 @@
   </style>
 </head>
 <body>
+<!--設定header區的背景顏色為bg-warning、
+    排列基礎為d-flex、寬度為w-100、
+    橫向物件的間距安排為justify-content-around、
+    垂直置中align-items-center-->  
 <header class="d-flex w-100 justify-content-around align-items-center bg-warning">
+  <!--放置logo的區塊-->
   <div class="w-25">
     <img src="./img/logo01.png" style="width:80px;height: 80px;">
   </div>
+  <!--放置選單的區塊--> 
   <div class="w-25 d-flex">
     <a class="w-25 mx-1 btn btn-warning" href="index.html">Home</a>
     <a class="w-25 mx-1 btn btn-warning" href="news.html">News</a>
@@ -34,21 +43,39 @@
   </div>
 </header>
 <main class="p-4">
+<!--設計展資訊區；
+    寬度為w-75、
+    橫向物件置中mx-auto、
+    排列基礎為d-flex
+    區塊高度為270px-->
 <div class="w-75 mx-auto d-flex" style="height:270px">
+  <!--放置一張圖片-->
   <img src="./img/pro01.png" style="height:250px">
+  <!--放置一段文字-->
   <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, tenetur, fugit nulla pariatur natus amet laborum ratione explicabo vero quas aliquid alias quaerat fugiat ab dolor magnam repellat nam nihil?</div>
 </div>
+<!--設計產品展示區；
+    寬度為w-75、
+    橫向物件置中mx-auto、
+    排列基礎為d-flex
+    間距安排為justify-content-between-->
 <div class="w-75 d-flex mx-auto justify-content-between">
+  <!--設計一個區塊大小為w-25-->
   <div class="w-25">
+      <!--放置一張圖片、圖片寬度設定為250px-->
       <img src="./img/pro01.png" style="width:250px">
+      <!--放置一段文字區塊-->
       <div>
+        <!--放置一個標題-->
         <h4>prod 01</h4>
+        <!--放置一段文字-->
         <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut minima deserunt eaque. Odit similique magnam perferendis nobis cupiditate,
+          <!--放置一個收合區塊、id設為prod01-->
           <div class="collapse" id="prod01">
-
             qui laudantium, voluptate et libero voluptatum saepe accusantium culpa voluptates nemo. Nemo?
           </div>
           </article>
+          <!--放置一個按鈕、data-target設為prod01-->
           <button class="btn btn-primary" data-toggle="collapse" data-target="#prod01" aria-expanded="'false" aria-controls="prod01">read more</button>
       </div>
   </div>
@@ -57,10 +84,12 @@
       <div>
         <h4>prod 02</h4>
         <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut minima deserunt eaque. Odit similique magnam perferendis nobis cupiditate,
+          <!--放置一個收合區塊、id設為prod02-->
           <div class="collapse" id="prod02">
             qui laudantium, voluptate et libero voluptatum saepe accusantium culpa voluptates nemo. Nemo?
           </div>
           </article>
+          <!--放置一個按鈕、data-target設為prod02-->
           <button class="btn btn-primary"  data-toggle="collapse" data-target="#prod02" aria-expanded="false" aria-controls="prod02">read more</button>
       </div>
   </div>
@@ -69,36 +98,52 @@
       <div>
         <h4>prod 03</h4>
           <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut minima deserunt eaque. Odit similique magnam perferendis nobis cupiditate,
+            <!--放置一個收合區塊、id設為prod03-->
             <div class="collapse" id="prod03">
               qui laudantium, voluptate et libero voluptatum saepe accusantium culpa voluptates nemo. Nemo?
-
             </div>
           </article>
+          <!--放置一個按鈕、data-target設為prod03-->
           <button class="btn btn-primary" data-toggle="collapse" data-target="#prod03" aria-expanded="false" aria-controls="prod03">read more</button>
       </div>
   </div>
-
-
 </div>
 </main>
+<!--設定footer區的背景顏色為bg-info、
+    排列基礎為d-flex、
+    超過寬度時自動換行flex-wrap、
+    橫向物件置中justify-content-center、
+    垂直置中align-items-center-->
 <footer class="d-flex flex-wrap justify-content-center align-items-center">
+  <!--社群媒體圖示區-->
   <div class="w-100 text-center" style="height: 50px;">
     <img src="./img/icon_facebook.png" style="width:35px">
     <img src="./img/icon_instagram.png" style="width:35px">
     <img src="./img/icon_twtter.png" style="width:35px">
     <img src="./img/icon_youtube.png" style="width:35px">
   </div>
-  <div class="w-100 text-center bg-info" style="height: 100px;line-height:100px">Copyright &copy; 2024 FIBEX All Rights Reserved</div>
+  <!--版權資訊區-->  
+  <div class="w-100 text-center bg-info" style="height: 100px;line-height:100px">
+    Copyright &copy; 2024 FIBEX All Rights Reserved
+  </div>
 </footer>
+<!--在body區最後引入jquery.js、bootstrap.js-->
 <script src="jquery.js"></script>
 <script src="bootstrap.js"></script>
 </body>
 </html>
 <script>
+//設定當collapse展開時，按鈕文字為read less  
 $(".collapse").on("show.bs.collapse",function(){
+
+  //選擇collapse的父元素的下一個元素，並設定文字為read less
   $(this).parent().next().text('read less')
 })
+
+//設定當collapse收合時，按鈕文字為read more
 $(".collapse").on("hide.bs.collapse",function(){
+
+  //選擇collapse的父元素的下一個元素，並設定文字為read more
   $(this).parent().next().text('read more')
 })
 </script>

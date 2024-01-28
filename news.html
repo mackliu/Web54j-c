@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News</title>
+  <!--在header區引入bootstrap.css-->
   <link rel="stylesheet" href="bootstrap.css">
   <style>
+    /*設定頁面整體大小為1920x1080*/    
     body{
       width:1920px;
       height:1080px;
     }
+    /*設定header、main、footer的高度*/    
     header{
       height:100px;
     }
@@ -22,10 +25,16 @@
   </style>
 </head>
 <body>
+<!--設定header區的背景顏色為bg-warning、
+    排列基礎為d-flex、寬度為w-100、
+    橫向物件的間距安排為justify-content-around、
+    垂直置中align-items-center-->  
 <header class="d-flex w-100 justify-content-around align-items-center bg-warning">
+  <!--放置logo的區塊-->
   <div class="w-25">
-    <img src="./img/logo01.png" style="width:80px;height: 80px;">
+      <img src="./img/logo01.png" style="width:80px;height: 80px;">
   </div>
+  <!--放置選單的區塊-->  
   <div class="w-25 d-flex">
     <a class="w-25 mx-1 btn btn-warning" href="index.html">Home</a>
     <a class="w-25 mx-1 btn btn-warning" href="news.html">News</a>
@@ -33,36 +42,53 @@
     <a class="w-25 mx-1 btn btn-warning" href="tickets.php">Tickets</a>
   </div>
 </header>
+<!--設定main區的內距為p-5、
+    排列基礎為d-flex、
+    橫向物件置中justify-content-center、
+    垂直置中align-items-center-->
 <main class="p-5 d-flex justify-content-center align-items-center">
+<!--建立一個區塊大小為500 x 500、間距m-2、定位方式為position-relative-->
 <div class="position-relative m-2" style="width: 500px;height:500px;">
-  <img src="./img/world-map.png" style="width:100%;height:100%;">
-  <div class="local btn btn-light position-absolute" style="top:160px;right:15px;">
-    <img src="./img/star.png" alt="">Janpan
-  </div>
-  <div class="local btn btn-light position-absolute" style="width:110px;top:260px;left:25px;">
-    <img src="./img/star.png" alt="">American
-  </div>
-  <div class="local btn btn-light position-absolute" style="top:360px;right:315px;">
-    <img src="./img/star.png" alt="">UK
-  </div>
-  <div class="local btn btn-light position-absolute" style="top:460px;right:215px;">
-    <img src="./img/star.png" alt="">Africa
-  </div>
-  <div class="local btn btn-light position-absolute" style="top:360px;right:115px;">
-    <img src="./img/star.png" alt="">Taiwan
-  </div>
-  
-</div>
-<div class="m-2" style="width: 500px;height:500px;">
-  <!--新聞區塊含文字-->
-  <div class="news position-relative">
-    <img src="./img/news-01.png"  style="width:100%;height:100%;">
-    <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
-      <h4>Janpan</h4>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
-    </div>
-  </div>
+    <!--放置世界地圖圖片，大小為滿版100% x 100%-->
+    <img src="./img/world-map.png" style="width:100%;height:100%;">
 
+    <!--建立對應的地圖指標元素、設定一個命名為local的樣式、
+        按鈕樣式為bg-light、定位方式為position-absolute、
+        位置個別指定特定坐標-->
+    <div class="local btn btn-light position-absolute" style="top:160px;right:15px;">
+        <!--放置星星圖示、地點文字-->
+        <img src="./img/star.png" alt="">Janpan
+    </div>
+    <div class="local btn btn-light position-absolute" style="width:110px;top:260px;left:25px;">
+        <img src="./img/star.png" alt="">American
+    </div>
+    <div class="local btn btn-light position-absolute" style="top:360px;right:315px;">
+        <img src="./img/star.png" alt="">UK
+    </div>
+    <div class="local btn btn-light position-absolute" style="top:460px;right:215px;">
+        <img src="./img/star.png" alt="">Africa
+    </div>
+    <div class="local btn btn-light position-absolute" style="top:360px;right:115px;">
+        <img src="./img/star.png" alt="">Taiwan
+    </div>
+</div>
+<!--建立一個區塊大小為500 x 500、間距m-2-->
+<div class="m-2" style="width: 500px;height:500px;">
+  <!--設定一個放置新聞內容的區塊，有一個命名為news的樣式、
+      定位方式為position-relative-->
+  <div class="news position-relative">
+      <!--放置新聞圖片，大小為滿版100% x 100%-->
+      <img src="./img/news-01.png"  style="width:100%;height:100%;">
+
+      <!--設定一個放置新聞內容的區塊，定位方式為position-absolute的、
+          寬度w-100、內距p-3、位置為底部bottom: 0、高度為180px、
+          背景顏色為rgba(255,255,255,0.5)-->
+      <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
+        <h4>Janpan</h4>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
+      </div>
+  </div>
+  <!--新聞區塊2、預設為不顯示d-none-->
   <div class="news position-relative d-none">
     <img src="./img/news-02.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
@@ -70,6 +96,7 @@
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
     </div>
   </div>
+  <!--新聞區塊3、預設為不顯示d-none-->  
   <div class="news position-relative d-none">
     <img src="./img/news-03.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
@@ -77,6 +104,7 @@
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
     </div>
   </div>
+  <!--新聞區塊4、預設為不顯示d-none-->
   <div class="news position-relative d-none">
     <img src="./img/news-04.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
@@ -84,6 +112,7 @@
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum architecto quia recusandae pariatur facilis dolore, ipsam ex nihil sed? Iste consequatur dolore delectus fugiat officiis praesentium. Sunt in delectus ducimus!
     </div>
   </div>
+  <!--新聞區塊5、預設為不顯示d-none-->
   <div class="news position-relative d-none">
     <img src="./img/news-05.png"  style="width:100%;height:100%;">
     <div class="position-absolute w-100 p-3" style="height:180px;background-color:rgba(255,255,255,0.5);bottom: 0;">
@@ -92,27 +121,40 @@
     </div>
   </div>
 </div>  
-
 </main>
+<!--設定footer區的背景顏色為bg-info、
+    排列基礎為d-flex、
+    超過寬度時自動換行flex-wrap、
+    橫向物件置中justify-content-center、
+    垂直置中align-items-center-->
 <footer class="d-flex flex-wrap justify-content-center align-items-center">
+  <!--社群媒體圖示區-->
   <div class="w-100 text-center" style="height: 50px;">
     <img src="./img/icon_facebook.png" style="width:35px">
     <img src="./img/icon_instagram.png" style="width:35px">
     <img src="./img/icon_twtter.png" style="width:35px">
     <img src="./img/icon_youtube.png" style="width:35px">
   </div>
-  <div class="w-100 text-center bg-info" style="height: 100px;line-height:100px">Copyright &copy; 2024 FIBEX All Rights Reserved</div>
+  <!--版權資訊區-->
+  <div class="w-100 text-center bg-info" style="height: 100px;line-height:100px">
+    Copyright &copy; 2024 FIBEX All Rights Reserved
+  </div>
 </footer>
+<!--在body區最後引入jquery.js、bootstrap.js-->
 <script src="jquery.js"></script>
 <script src="bootstrap.js"></script>
 </body>
 </html>
 <script>
+//點擊local按鈕時，顯示對應的新聞區塊
 $(".local").on('click',function(){
+  //取得local按鈕的索引值
   let idx=$(this).index(".local")
-  console.log(idx)
+  //移除所有.news的d-none
   $(".news").removeClass("d-none")
+  //所有的.news加上d-none
   $(".news").addClass("d-none")
+  //移除指定的.news的d-none
   $(".news").eq(idx).removeClass("d-none");
 })
 </script>
