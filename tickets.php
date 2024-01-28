@@ -1,3 +1,25 @@
+<?php
+$dsn="mysql:host=localhost;charset=utf8;dbname=db50";
+$pdo=new PDO($dsn,'root','');
+session_start();
+if(!empty($_POST)){
+
+  if($_POST['verification']==$_SESSION['ans']){
+    $sql="insert into `tickets` (`first_name`,`last_name`,`phone`,`password`) 
+          values('{$_POST['first_name']}','{$_POST['last_name']}','{$_POST['phone']}','{$_POST['password']}')";
+    $pdo->exec($sql);
+    $success='tickets order were successed!';
+
+
+  }else{
+    $error="sorry ! the verification is wrong ,please refill again";
+  }
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +57,12 @@
 </header>
 <main class="container">
   <h1 class="text-center">Tickets</h1>
+  <div class="text-center text-danger">
+    <?=$error??'';?>
+  </div>
+  <div class="text-center text-success">
+    <?=$success??'';?>
+  </div>
   <form action="tickets.php" method="post" class="w-50 my-4 mx-auto">
     <table class="w-100">
       <tr class="form-group">
@@ -59,7 +87,7 @@
           <input class="form-control w-50" type="text" name="verification" id="verification">
           <div class="border rounded text-center w-50 ml-2 bg-info text-white" style="line-height:38px">
             <?php
-                session_start();
+
                 $_SESSION['ans']=rand(1000,9999);
                 echo $_SESSION['ans'];
               ?>
